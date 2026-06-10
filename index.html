@@ -6,69 +6,195 @@
     <title>Mukarram Ali | Portfolio</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f8f9fa; color: #333; line-height: 1.6; }
-        header { background: #1a1a1a; color: #fff; padding: 2.5rem 1.5rem; text-align: center; }
-        header h1 { font-size: 2.4rem; font-weight: 600; letter-spacing: 0.5px; }
-        .container { max-width: 900px; margin: 2.5rem auto; padding: 0 1.5rem; }
-        .hero { background: #fff; padding: 3rem 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); text-align: center; margin-bottom: 2.5rem; }
-        .hero h2 { color: #2d3748; margin-bottom: 1rem; font-size: 1.75rem; }
-        .hero p { font-size: 1.15rem; color: #4a5568; max-width: 650px; margin: 0 auto; }
+        body { background-color: #f4f6f9; color: #333; line-height: 1.6; }
         
-        .section-title { margin: 2.5rem 0 1.2rem; color: #1a1a1a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.6rem; font-size: 1.4rem; }
+        /* Header Styling */
+        header { background: #1a1a1a; color: #fff; padding: 3rem 1.5rem; text-align: center; }
+        header h1 { font-size: 2.5rem; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 0.3rem; }
+        header p { color: #cbd5e0; font-size: 1.1rem; font-weight: 400; }
+        .contact-info { margin-top: 0.8rem; font-size: 0.9rem; color: #a0aec0; }
+        .contact-info span { margin: 0 10px; }
         
-        /* Skills Tags Styling */
-        .skills-container { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1rem; justify-content: center; }
-        .skill-tag { background: #edf2f7; color: #4a5568; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 500; }
+        .container { max-width: 950px; margin: 2.5rem auto; padding: 0 1.5rem; }
         
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.8rem; }
-        .card { background: #fff; padding: 1.8rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.02); border-top: 4px solid #3182ce; transition: transform 0.2s; }
-        .card:hover { transform: translateY(-4px); }
-        .card h3 { margin-bottom: 0.7rem; color: #2b6cb0; font-size: 1.25rem; }
-        .card p { color: #4a5568; font-size: 0.95rem; }
+        /* Profile Summary */
+        .hero { background: #fff; padding: 2.5rem 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); text-align: center; margin-bottom: 2.5rem; }
+        .hero p { font-size: 1.1rem; color: #4a5568; max-width: 750px; margin: 0 auto; }
         
-        .contact-section { text-align: center; background: #fff; padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
-        .contact-btn { display: inline-block; background: #3182ce; color: white; padding: 0.8rem 2rem; border-radius: 6px; text-decoration: none; margin-top: 1.2rem; font-weight: 500; transition: background 0.2s; }
-        .contact-btn:hover { background: #2b6cb0; }
+        .section-title { margin: 2.5rem 0 1.2rem; color: #1a1a1a; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.6rem; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        
+        /* Key Skills Section */
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 2rem; }
+        .skill-tag { background: #3182ce; color: #fff; padding: 0.5rem 1.2rem; border-radius: 20px; font-size: 0.9rem; font-weight: 500; box-shadow: 0 2px 4px rgba(49,130,206,0.15); }
+        
+        /* Experience & Education Cards */
+        .exp-item { background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.01); border-left: 5px solid #3182ce; margin-bottom: 1.8rem; }
+        .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem; }
+        .exp-title h3 { color: #2d3748; font-size: 1.3rem; }
+        .company-name { color: #4a5568; font-weight: 600; font-size: 1rem; margin-top: 0.2rem; }
+        .date-badge { background: #edf2f7; color: #4a5568; padding: 0.3rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 500; }
+        .exp-summary { color: #4a5568; font-style: italic; font-size: 0.95rem; margin-bottom: 1rem; background: #f7fafc; padding: 0.8rem; border-radius: 6px; }
+        .bullet-list { list-style-type: square; margin-left: 1.5rem; color: #4a5568; font-size: 0.95rem; }
+        .bullet-list li { margin-bottom: 0.5rem; }
+        
+        /* Grid Layout for Education & Certifications */
+        .two-column-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 1.8rem; }
+        .edu-card { background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.01); border-top: 4px solid #2b6cb0; margin-bottom: 1rem; }
+        .edu-card h4 { color: #2b6cb0; font-size: 1.1rem; margin-bottom: 0.3rem; }
+        .edu-inst { color: #4a5568; font-weight: 500; font-size: 0.95rem; }
+        .edu-date { color: #a0aec0; font-size: 0.85rem; margin-top: 0.2rem; }
+        
+        /* Contact Section */
+        .contact-section { text-align: center; background: #fff; padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
+        .contact-btn { display: inline-block; background: #2b6cb0; color: white; padding: 0.8rem 2.2rem; border-radius: 6px; text-decoration: none; margin-top: 1.2rem; font-weight: 500; transition: background 0.2s; box-shadow: 0 4px 6px rgba(43,108,176,0.2); }
+        .contact-btn:hover { background: #1a446c; }
+        
         footer { text-align: center; padding: 3rem 1.5rem; color: #a0aec0; font-size: 0.9rem; }
+        
+        @media (max-width: 600px) {
+            .exp-header { flex-direction: column; }
+            .two-column-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
     <header>
         <h1>Mukarram Ali</h1>
+        <p>HR Operations Specialist & Software Engineer</p>
+        <div class="contact-info">
+            <span>📍 Phool Nagar, District Kasur</span> | 
+            <span>📧 a5064m@gmail.com</span> | 
+            <span>📞 +92-331-4258282</span>
+        </div>
     </header>
 
     <div class="container">
+        
         <section class="hero">
-            <h2>Software Engineer & Web Developer</h2>
-            <p>Welcome to my professional portfolio. I specialize in developing functional web applications, managing modern tech infrastructure, and optimizing operational data tracking workflows.</p>
-            
-            <div class="skills-container">
-                <span class="skill-tag">Software Engineering</span>
-                <span class="skill-tag">WordPress & E-Commerce</span>
-                <span class="skill-tag">LocalWP Testing</span>
-                <span class="skill-tag">Data Tracking</span>
-                <span class="skill-tag">FlowHCM Systems</span>
-            </div>
+            <p>Dynamic HR Specialist skilled in streamlining HRIS, attendance, and payroll management. Excel at implementing HR policies and SOPs that bridge the gap between employee needs and corporate strategy, while simultaneously advancing expertise in Software Engineering to build scalable technical solutions.</p>
         </section>
 
-        <h2 class="section-title">Featured Work</h2>
-        <div class="projects-grid">
-            <div class="card">
-                <h3>E-Commerce Store & Web Customization</h3>
-                <p>Designing local server testing environments (LocalWP) and customized storefront layouts tailored to deliver seamless, mobile-responsive shopping experiences.</p>
+        <h2 class="section-title">Key Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-tag">HRIS & FlowHCM</div>
+            <div class="skill-tag">Payroll Management</div>
+            <div class="skill-tag">Recruitment Coordination</div>
+            <div class="skill-tag">Employee Relations</div>
+            <div class="skill-tag">WordPress Development</div>
+            <div class="skill-tag">AI Productivity Tools</div>
+            <div class="skill-tag">Wikipedia Publishing</div>
+            <div class="skill-tag">Urdu Transcription</div>
+            <div class="skill-tag">Microsoft Office</div>
+        </div>
+
+        <h2 class="section-title">Professional Experience</h2>
+        
+        <div class="exp-item">
+            <div class="exp-header">
+                <div class="exp-title">
+                    <h3>HR Officer</h3>
+                    <div class="company-name">Citi Pharma Limited</div>
+                </div>
+                <span class="date-badge">Oct 2024 - Present</span>
             </div>
-            <div class="card">
-                <h3>Workflow Automation & Data Systems</h3>
-                <p>Engineering structured backend solutions, optimizing tracking workflows, and managing administrative management systems efficiently.</p>
+            <div class="exp-summary">
+                Expertly managing HR Operations and Payroll at Citi Pharma, specializing in biometric attendance, leave management, and daily overtime verification. Ensuring 100% payroll accuracy and SOP compliance.
             </div>
+            <ul class="bullet-list">
+                <li>Process monthly payroll for all employees, ensuring absolute accuracy and timeliness.</li>
+                <li>Verify attendance, leaves, shift data, and daily overtime sheets before processing workflows.</li>
+                <li>Enroll new employees into biometric machines and securely handle offboarding/removal processes.</li>
+                <li>Prepare and generate detailed HR data reports (attendance, turnover, headcount, payroll).</li>
+                <li>Assist in the full-cycle recruitment process, including job postings, screening, and onboarding.</li>
+                <li>Address employee grievances, support disciplinary procedures, and maintain healthy workplace relations.</li>
+            </ul>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <div class="exp-title">
+                    <h3>Quality Control Inspector</h3>
+                    <div class="company-name">Sayyed Engineering Limited</div>
+                </div>
+                <span class="date-badge">Feb 2021 - Sept 2024</span>
+            </div>
+            <div class="exp-summary">
+                Maintained rigorous industrial standards through meticulous raw material and finished product inspections, ensuring 100% SOP compliance and line monitoring.
+            </div>
+            <ul class="bullet-list">
+                <li>Conducted thorough raw material inspections to ensure adherence to standard industrial specifications.</li>
+                <li>Monitored production lines to systematically identify and correct process inconsistencies or defects.</li>
+                <li>Maintained detailed quality log reports and collaborated with teams for corrective action paths.</li>
+            </ul>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <div class="exp-title">
+                    <h3>Freelance Content & Data Specialist</h3>
+                    <div class="company-name">Upwork, Freelancer.com & GoTranscript</div>
+                </div>
+                <span class="date-badge">Sep 2019 - Present</span>
+            </div>
+            <div class="exp-summary">
+                Delivering high-accuracy digital text and content services across global freelance platforms with a verified 100% job completion rate.
+            </div>
+            <ul class="bullet-list">
+                <li>Dedicated Urdu Audio/Video Transcriber for GoTranscript, translating complex multi-channel audio into precise verbatim text records.</li>
+                <li>Executed professional Wikipedia article publishing layout configurations and automated web scraping projects for international clients.</li>
+            </ul>
+        </div>
+
+        <div class="two-column-grid">
+            
+            <div>
+                <h2 class="section-title">Education</h2>
+                <div class="edu-card">
+                    <h4>BS Software Engineering (3rd Semester)</h4>
+                    <div class="edu-inst">Virtual University of Pakistan</div>
+                    <div class="edu-date">2025 - Present</div>
+                </div>
+                <div class="edu-card">
+                    <h4>Intermediate in Computer Science (ICS)</h4>
+                    <div class="edu-inst">Govt. Post Graduate College Phool Nagar</div>
+                    <div class="edu-date">Graduated: 2019</div>
+                </div>
+                <div class="edu-card">
+                    <h4>Matriculation (Science)</h4>
+                    <div class="edu-inst">Govt. Boys High School Balloki</div>
+                    <div class="edu-date">Graduated: 2016</div>
+                </div>
+            </div>
+            
+            <div>
+                <h2 class="section-title">Certifications</h2>
+                <div class="edu-card">
+                    <h4>WordPress Development</h4>
+                    <div class="edu-inst">Digiskills.pk</div>
+                </div>
+                <div class="edu-card">
+                    <h4>Maximize Productivity with AI Tools</h4>
+                    <div class="edu-inst">Coursera</div>
+                </div>
+                <div class="edu-card">
+                    <h4>Professional Freelancing</h4>
+                    <div class="edu-inst">Digiskills.pk</div>
+                </div>
+                <div class="edu-card">
+                    <h4>Introduction to Customer Service</h4>
+                    <div class="edu-inst">Coursera</div>
+                </div>
+            </div>
+            
         </div>
 
         <h2 class="section-title">Let's Connect</h2>
         <section class="contact-section">
-            <p>Whether you want to discuss a software project, web deployment, or professional collaboration—feel free to reach out.</p>
+            <p>I am always open to discussing modern HR infrastructure solutions, web deployments, or software engineering opportunities.</p>
             <a href="https://www.linkedin.com/in/mukarram---ali" target="_blank" class="contact-btn">Connect on LinkedIn</a>
         </section>
+        
     </div>
 
     <footer>
